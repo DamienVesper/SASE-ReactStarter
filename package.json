@@ -39,6 +39,7 @@
     "@types/webpack": "^5.28.0",
     "@typescript-eslint/eslint-plugin": "^5.38.1",
     "@typescript-eslint/parser": "^5.38.1",
+    "autoprefixer": "^10.4.12",
     "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
     "eslint": "^8.24.0",
@@ -48,6 +49,7 @@
     "eslint-plugin-promise": "^6.0.1",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.1",
+    "postcss": "^8.4.16",
     "sass": "^1.55.0",
     "sass-loader": "^13.0.2",
     "ts-loader": "^9.4.1",
@@ -58,5 +60,10 @@
     "webpack-dev-server": "^4.11.1",
     "webpack-manifest-plugin": "^5.0.0",
     "webpack-merge": "^5.8.0"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwind": "^4.0.0"
   }
 }
