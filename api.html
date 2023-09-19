@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1>HELLO WORLD</h1>
+        <form action="https://api.infamousredpanda.com/submitted" method="get">
+            <input type="text" name="first_text_field">
+            <input type="submit" value="sned">
+        </form>
+        <form action="https://api.infamousredpanda.com/submitted" method="post">
+            <input type="text" name="first_text_field">
+            <input type="submit" value="sned">
+        </form>
+        </form>
+        <form action="https://api.infamousredpanda.com/redirect" method="get">
+            <input type="text" name="first_text_field">
+            <input type="submit" value="sned">
+        </form>
+
+        <p id="resText"></p>
+
+        <input type="button" value="See Supported" onclick="getsuplang()">
+        <textarea name="query_text_field" id="queryText" cols="30" rows="10"></textarea>
+        <input type="button" value="Translate" onclick="translateText()">
+        <script>
+            function getsuplang() {
+                fetch("https://api.infamousredpanda.com/possibletranslations").then(res => res.json()).then(res => {
+                    console.log(res);
+                    document.querySelector(`#resText`).innerHTML = res.toString();
+                });
+            }
+            
+            function translateText() {
+                fetch(`https://api.infamousredpanda.com/translate/es`, {
+                    method: `POST`,
+                    mode: `cors`,
+                    headers: {
+                        [`Content-Type`]: `application/json`,
+                        coolapikey: `Geaux-Hack`
+                    },
+                    body: JSON.stringify({ textToTranslate: document.querySelector(`textarea`).value })
+                }).then(res => res.json()).then(res => console.log(res));
+            }
+        </script>
+    </body>
+</html>
